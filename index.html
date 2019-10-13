@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>少年先锋队</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <script src="js/swiper.min.js"></script>
+  <script src="js/swiper.animate.min.js"></script>
+
+  <!--<link rel="stylesheet" href="/dist/css/swiper.min.css">
+<link rel="stylesheet" href="/dist/css/animate.min.css">
+<script src="/dist/js/swiper.min.js"></script>
+<script src="/dist/js/swiper.animate.min.js"></script>-->
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      font-family: "microsoft yahei";
+    }
+
+    .swiper-container {
+      /*  width: 320px;
+    height: 480px;*/
+      width: 100%;
+      height: 100%;
+      background: #000;
+
+
+    }
+
+    .swiper-slide {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide1 {
+      background: url(upload/bg.jpg) no-repeat left top;
+      background-size: 100% 100%;
+    }
+
+    .swiper-slide2,
+    .swiper-slide3 {
+      background: url(upload/bg1.jpg) no-repeat left top;
+      background-size: 100% 100%;
+    }
+
+    #firstCon {
+      width: 100%;
+      height: 100%;
+      background: url(upload/bg1.jpg) no-repeat left top;
+      background-size: 100% 100%;
+    }
+
+    #newCon,
+    .swiper-slide5 {
+      width: 100%;
+      height: 100%;
+      background: url(upload/bg2.jpg) no-repeat left top;
+      background-size: 100% 100%;
+    }
+
+    #guide {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(220, 20, 60, 0.646);
+    }
+
+    /* .swiper-slide4 {
+      background: url(upload/bg2.jpg) no-repeat left top;
+      background-size: 100% 100%;
+    } */
+
+    img {
+      display: block;
+    }
+
+    .swiper-pagination-bullet {
+      width: 6px;
+      height: 6px;
+      background: #fff;
+      opacity: .4;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+
+    @-webkit-keyframes start {
+
+      0%,
+      30% {
+        opacity: 0;
+        -webkit-transform: translate(0, 10px);
+      }
+
+      60% {
+        opacity: 1;
+        -webkit-transform: translate(0, 0);
+      }
+
+      100% {
+        opacity: 0;
+        -webkit-transform: translate(0, -8px);
+      }
+    }
+
+    @-moz-keyframes start {
+
+      0%,
+      30% {
+        opacity: 0;
+        -moz-transform: translate(0, 10px);
+      }
+
+      60% {
+        opacity: 1;
+        -moz-transform: translate(0, 0);
+      }
+
+      100% {
+        opacity: 0;
+        -moz-transform: translate(0, -8px);
+      }
+    }
+
+    @keyframes start {
+
+      0%,
+      30% {
+        opacity: 0;
+        transform: translate(0, 10px);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(0, -8px);
+      }
+    }
+
+    .ani {
+      position: absolute;
+    }
+
+    .txt {
+      position: absolute;
+    }
+
+    #array {
+      position: absolute;
+      z-index: 999;
+      -webkit-animation: start 1.5s infinite ease-in-out;
+    }
+
+    .circle {
+      animation: Large .5s infinite;
+    }
+
+    @keyframes Large {
+      0% {
+        transform: scale(.9);
+        opacity: .6;
+      }
+
+      100% {
+        transform: scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    .cloth {
+      position: absolute;
+      left: -100%;
+      top: -100%;
+      animation: lefToC 2s linear forwards;
+    }
+
+    @keyframes lefToC {
+      0% {
+        left: -100%;
+        top: -100%;
+      }
+
+      100% {
+        left: 30px;
+        top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <!-------------slide1----------------->
+      <section class="swiper-slide swiper-slide1">
+        <img src="upload/page101.png" class="ani resize" style="width:280px;height:38px;left:20px;top:175px;z-index:1;"
+          swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s">
+        <img src="upload/page102.png" class="ani resize" style="width:350px;height:86px;left:-20px;top:210px;z-index:1;"
+          swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1s">
+
+        <div id="hand" class="ani resize"
+          style="position: absolute;z-index: 2;left:195px;top:248px;transform: scale(0.7)"
+          swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="2s">
+          <svg fill="#BF0000" stroke="transparent" stroke-width="0"
+            style="position: absolute; width: 46px; height: 44px; opacity: 0.9; transform-origin: 50% 50% 0px; transform: translate3d(-50%, -50%, 0px) matrix(0.326087, 0, 0, 0.340909, 64, 40);">
+            <ellipse cx="23" cy="22" rx="23" ry="22"></ellipse>
+          </svg>
+          <svg fill="transparent" stroke="#BF0000" stroke-width="5"
+            style="position: absolute;width: 46px; height: 44px; opacity: 0.3; transform-origin: 50% 50% 0px; transform: translate3d(-50%, -50%, 0px) matrix(0.652174, 0, 0, 0.681818, 64, 40);">
+            <ellipse cx="23" cy="22" rx="20" ry="19"></ellipse>
+          </svg>
+          <svg class="circle resize" fill="transparent" stroke="#BF0000" stroke-width="5"
+            style=" position: absolute; width: 46px;left: 37px; top: 14px; height: 44px; opacity: 0.6; transform-origin: 50% 50% 0px; transform: translate3d(0%, 0%, 0px) matrix(0.652174, 0, 0, 0.681818, 64, 40);">
+            <ellipse cx="23" cy="22" rx="20" ry="19"></ellipse>
+          </svg>
+
+          <svg viewBox="0 0 1024 1024" fill="#000000" stroke="transparent"
+            style="position: absolute; width: 80px; height: 80px; transform-origin: 50% 50% 0px; transform: translate3d(-50%, -50%, 0px) matrix(0.8125, 0, 0, 0.8125, 74, 76);">
+            <path
+              d="M668.509055 413.180344l-0.826831-0.578168-24.687262-1.034563-15.669888-26.027793c-2.27788-3.897773-5.375427-7.212262-8.974395-10.326183-21.208021-18.624173-45.984311-28.324092-74.499761-29.102828l-25.110911 4.996804-0.718361-2.127454-0.823761-0.578168L438.682669 50.467415C427.773202 12.147668 408.898319 12.047384 388.531456 15.638165c0 0-41.428551 5.90857-33.57877 50.429553l77.95035 418.079934c0.730641 4.381797 1.305739 8.578376 1.173732 12.896728 0.191358 19.581987-6.197142 36.624129-19.022239 51.655474-3.241834 4.52813-8.952906 8.188496-12.552897 8.644891-24.164353 3.854794-45.415352-1.788739-64.09376-16.944927-23.683399-17.799388-40.386826-55.263651-56.619532-79.285764-9.148357-13.536294-16.806781-30.643927-27.997658-42.946115-20.338211-22.356171-64.74663-38.911218-90.337471-17.96721-8.365528 6.844895-17.011442 25.113981-9.482979 35.004235 10.965749 14.409175 24.835641 30.595832 32.246425 45.546336 6.391571 12.888542 11.477402 26.976398 16.283872 41.709961 3.260254 9.992585 5.66707 33.367969 12.742209 39.71042 7.637957 6.852058 13.486152 22.880103 19.054985 30.855752 13.384845 19.185968 30.506804 42.178635 38.97057 64.196091 23.836895 36.148291 34.727942 81.398892 63.057151 117.221772 32.829709 41.513486 66.933435 79.740112 115.90887 104.293321 18.157545 10.275018 32.082696 24.059975 41.932018 41.720194l16.826224 86.194104c63.679321-11.805884 319.126224-55.070246 346.443383-60.601216l-16.868179-73.922616-0.800225-0.921999c5.632277-18.653849 10.771321-37.685297 15.743566-56.732096 3.826142-15.143908 6.107091-30.396287 6.6607-45.769416 1.983167-40.723493 3.632737-81.650625 5.454222-122.561383 0.163729-7.260357 0.851391-14.656815 2.035356-21.675672 3.199878-23.496134-10.216689-87.623663-60.008722-90.25356-0.928139-0.053212-1.489934-0.972141-1.798972-1.5104-12.727882-26.000164-29.057803-49.997718-48.864918-71.29272C735.712643 436.807461 702.7673 418.342923 668.509055 413.180344"
+              fill="#BF0000" stroke="transparent"></path>
+          </svg>
+        </div>
+      </section>
+
+
+      <!---------------slide2-------------->
+      <section class="swiper-slide swiper-slide2">
+        <img src="upload/page201.png" class="ani resize" style="width:270px;height:264px;left:30px;top:0px;z-index:5; ">
+        <img src="upload/page202.png" class="ani resize" style="width:320px;height:62px;left:0px;top:260px;z-index:4;"
+          swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s">
+
+
+      </section>
+
+      <!----------------slide3-------------->
+      <section class="swiper-slide swiper-slide3">
+        <video class="ani resize" playsinline="" x-webkit-airplay="" webkit-playsinline="" src="./upload/video.mp4"
+          controls="" loop="" style="object-fit: fill; height: 180px; width: 300px; left: 10px; top: 20px;"
+          data-vscid="w0ym19x6n"></video>
+        <img src="upload/page301.png" class="ani resize" style="width:330px;height:152px;left:0px;top:185px;z-index:4;"
+          swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s">
+        <img src="upload/page201.png" class="ani resize animated slow infinite fadeOut"
+          style="width:66px;height:70px;left:175px;top:190px;z-index:5;">
+      </section>
+
+      <!-------------slide4----------------->
+      <section class="swiper-slide swiper-slide4">
+        <div id="firstCon">
+          <img src="upload/page401.png" class="ani resize"
+            style="width:420px;height:506px;left:30px;top:10px;z-index:2;" swiper-animate-effect="fadeInDown"
+            swiper-animate-duration="3s" swiper-animate-delay="0s">
+          <img src="upload/page402.png" class="ani resize"
+            style="width:80px;height:130px;left:110px;top:130px;z-index:1;" swiper-animate-effect="fadeIn"
+            swiper-animate-duration="1.5s" swiper-animate-delay="3s">
+
+          <div id="salute" class="ani resize"
+            style="position: absolute;z-index: 3;left:145px;top:178px;transform: scale(0.7)"
+            swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="3s">
+            <svg fill="#BF0000" stroke="transparent" stroke-width="0"
+              style="position: absolute; width: 46px; height: 44px; opacity: 0.9; transform-origin: 50% 50% 0px; transform: translate3d(-50%, -50%, 0px) matrix(0.326087, 0, 0, 0.340909, 64, 40);">
+              <ellipse cx="23" cy="22" rx="23" ry="22"></ellipse>
+            </svg>
+            <svg fill="transparent" stroke="#BF0000" stroke-width="5"
+              style="position: absolute;width: 46px; height: 44px; opacity: 0.3; transform-origin: 50% 50% 0px; transform: translate3d(-50%, -50%, 0px) matrix(0.652174, 0, 0, 0.681818, 64, 40);">
+              <ellipse cx="23" cy="22" rx="20" ry="19"></ellipse>
+            </svg>
+            <svg class="circle resize" fill="transparent" stroke="#BF0000" stroke-width="5"
+              style=" position: absolute; width: 46px;left: 37px; top: 14px; height: 44px; opacity: 0.6; transform-origin: 50% 50% 0px; transform: translate3d(0%, 0%, 0px) matrix(0.652174, 0, 0, 0.681818, 64, 40);">
+              <ellipse cx="23" cy="22" rx="20" ry="19"></ellipse>
+            </svg>
+
+            <svg viewBox="0 0 1024 1024" fill="#000000" stroke="transparent"
+              style="position: absolute; width: 80px; height: 80px; transform-origin: 50% 50% 0px; transform: translate3d(-50%, -50%, 0px) matrix(0.8125, 0, 0, 0.8125, 74, 76);">
+              <path
+                d="M668.509055 413.180344l-0.826831-0.578168-24.687262-1.034563-15.669888-26.027793c-2.27788-3.897773-5.375427-7.212262-8.974395-10.326183-21.208021-18.624173-45.984311-28.324092-74.499761-29.102828l-25.110911 4.996804-0.718361-2.127454-0.823761-0.578168L438.682669 50.467415C427.773202 12.147668 408.898319 12.047384 388.531456 15.638165c0 0-41.428551 5.90857-33.57877 50.429553l77.95035 418.079934c0.730641 4.381797 1.305739 8.578376 1.173732 12.896728 0.191358 19.581987-6.197142 36.624129-19.022239 51.655474-3.241834 4.52813-8.952906 8.188496-12.552897 8.644891-24.164353 3.854794-45.415352-1.788739-64.09376-16.944927-23.683399-17.799388-40.386826-55.263651-56.619532-79.285764-9.148357-13.536294-16.806781-30.643927-27.997658-42.946115-20.338211-22.356171-64.74663-38.911218-90.337471-17.96721-8.365528 6.844895-17.011442 25.113981-9.482979 35.004235 10.965749 14.409175 24.835641 30.595832 32.246425 45.546336 6.391571 12.888542 11.477402 26.976398 16.283872 41.709961 3.260254 9.992585 5.66707 33.367969 12.742209 39.71042 7.637957 6.852058 13.486152 22.880103 19.054985 30.855752 13.384845 19.185968 30.506804 42.178635 38.97057 64.196091 23.836895 36.148291 34.727942 81.398892 63.057151 117.221772 32.829709 41.513486 66.933435 79.740112 115.90887 104.293321 18.157545 10.275018 32.082696 24.059975 41.932018 41.720194l16.826224 86.194104c63.679321-11.805884 319.126224-55.070246 346.443383-60.601216l-16.868179-73.922616-0.800225-0.921999c5.632277-18.653849 10.771321-37.685297 15.743566-56.732096 3.826142-15.143908 6.107091-30.396287 6.6607-45.769416 1.983167-40.723493 3.632737-81.650625 5.454222-122.561383 0.163729-7.260357 0.851391-14.656815 2.035356-21.675672 3.199878-23.496134-10.216689-87.623663-60.008722-90.25356-0.928139-0.053212-1.489934-0.972141-1.798972-1.5104-12.727882-26.000164-29.057803-49.997718-48.864918-71.29272C735.712643 436.807461 702.7673 418.342923 668.509055 413.180344"
+                fill="#BF0000" stroke="transparent"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div id="newCon" style="display: none">
+          <img src="upload/page403.png" class="ani resize"
+            style="width:320px;height:120px;left:0px;top:65px;z-index:1;">
+        </div>
+
+
+      </section>
+
+      <!---------------slide5-------------->
+      <section class="swiper-slide swiper-slide5">
+        <img src="upload/page501.png" class="ani resize" style="width:260px;height:264px;left:0px;top:0px;z-index:5; "
+          swiper-animate-effect="fadeInUp" swiper-animate-duration="1.8s" swiper-animate-delay="0s">
+        <img id="share" src="upload/page502.png" class="ani resize"
+          style="width:120px;height:82px;left:10px;top:210px;z-index:3;" swiper-animate-effect="fadeInUp"
+          swiper-animate-duration="1.8s" swiper-animate-delay="1.5s">
+        <div id="num" class="ani resize" style="left: 115px;top: 87px;font-size: 28px; color: crimson;"
+          swiper-animate-effect="fadeIn" swiper-animate-duration="2.3s" swiper-animate-delay=".5s">8857</div>
+
+        <div id="guide" style="display: none;z-index: 6;">
+          <img src="upload/page503.png" class="ani resize"
+            style="width:100px;height:100px;right:0px;top:0px;z-index:5; ">
+          <img src="upload/page201.png" class="ani resize"
+            style="width:230px;height:214px;left:45px;top:60px;z-index:5; ">
+          <div class="resize" style="position: absolute;left: 85px;top:280px;color: #fff;z-index: 6;font-size: 31px;">
+            南京市少工委</div>
+        </div>
+      </section>
+
+    </div>
+
+    <img src="images/arrow.png" style="width:20px;height:15px; top:460px; left:150px;" id="array" class="resize">
+  </div>
+
+
+  <script>
+
+    scaleW = window.innerWidth / 320;
+    scaleH = window.innerHeight / 480;
+    var resizes = document.querySelectorAll('.resize');
+    for (var j = 0; j < resizes.length; j++) {
+      resizes[j].style.width = parseInt(resizes[j].style.width) * scaleW + 'px';
+      resizes[j].style.height = parseInt(resizes[j].style.height) * scaleH + 'px';
+      resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
+      resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
+    }
+
+    let num = document.getElementById('num')
+    let newNum = Math.round(Math.random() * 1000 + Math.random() * 100 + Math.random() * 10) + (num.innerHTML - '0')
+    num.innerHTML = newNum
+
+    var mySwiper = new Swiper('.swiper-container', {
+      direction: 'vertical',
+      pagination: '.swiper-pagination',
+      //virtualTranslate : true,
+      mousewheelControl: true,
+      onInit: function (swiper) {
+        swiperAnimateCache(swiper);
+        swiperAnimate(swiper);
+      },
+      onSlideChangeEnd: function (swiper) {
+        swiperAnimate(swiper);
+      },
+      onTransitionEnd: function (swiper) {
+        swiperAnimate(swiper);
+      },
+
+
+      watchSlidesProgress: true,
+
+      onProgress: function (swiper) {
+        for (var i = 0; i < swiper.slides.length; i++) {
+          var slide = swiper.slides[i];
+          var progress = slide.progress;
+
+          var translate = progress * swiper.height / 4;
+          scale = 1 - Math.min(Math.abs(progress * 0.5), 1);
+
+          var opacity = 1 - Math.min(Math.abs(progress / 2), 0.5);
+          slide.style.opacity = opacity;
+          es = slide.style;
+          es.webkitTransform = es.MsTransform = es.msTransform = es.MozTransform = es.OTransform = es.transform = 'translate3d(0,' + translate + 'px,-' + translate + 'px) scaleY(' + scale + ')';
+
+        }
+      },
+
+      onSetTransition: function (swiper, speed) {
+        for (var i = 0; i < swiper.slides.length; i++) {
+          es = swiper.slides[i].style;
+          es.webkitTransitionDuration = es.MsTransitionDuration = es.msTransitionDuration = es.MozTransitionDuration = es.OTransitionDuration = es.transitionDuration = speed + 'ms';
+
+        }
+      },
+
+
+
+    })
+
+    /* 自定义点击事件 */
+    let hand = document.getElementById('hand')
+    hand.onclick = () => {
+      event.preventDefault();
+      mySwiper.slideNext();
+    }
+
+    let salute = document.getElementById('salute')
+    salute.onclick = () => {
+      event.preventDefault();
+      let firstCon = document.getElementById('firstCon')
+      firstCon.setAttribute("style", "display: none")
+
+      let newCon = document.getElementById('newCon')
+      newCon.setAttribute('style', 'display: block')
+    }
+
+    let share = document.getElementById('share')
+    share.onclick = () => {
+      let guide = document.getElementById('guide')
+      guide.setAttribute('style', 'display: block')
+    }
+  </script>
+</body>
+
+</html>
