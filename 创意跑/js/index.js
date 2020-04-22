@@ -3,13 +3,24 @@ const isIphonex = () => /iphone/gi.test(navigator.userAgent) && window.screen &&
 
 scaleW = window.innerWidth / 375;
 scaleH = window.innerHeight / 667;
-if (isIphonex())
-  scaleH = (window.innerHeight - 104) / 667;
+var scaleH2 = scaleH;
+var bili = scaleH / scaleW;
+console.log("=======pre: ", scaleH / scaleW);
+if (isIphonex() || bili > 1.06) {
+  bili = 1.06
+  scaleH = 1.06 * scaleW;
+}
+
 var resizes = document.querySelectorAll('.resize');
 for (var j = 0; j < resizes.length; j++) {
   resizes[j].style.width = parseInt(resizes[j].style.width) * scaleW + 'px';
   resizes[j].style.height = parseInt(resizes[j].style.height) * scaleH + 'px';
   resizes[j].style.top = parseInt(resizes[j].style.top) * scaleH + 'px';
+  if (bili == 1.06) {
+    if (!isIphonex())
+      resizes[j].style.top = parseInt(resizes[j].style.top + 20) * scaleH2 + 'px';
+    resizes[j].style.top = parseInt(resizes[j].style.top + 60) * scaleH + 'px';
+  }
   resizes[j].style.left = parseInt(resizes[j].style.left) * scaleW + 'px';
 }
 
@@ -159,6 +170,8 @@ zhengshu.onclick = () => {
 // 拼出来的图片的宽度
 const width = 360;
 var height = 602;
+if (bili == 1.06)
+  height = 1.5 * width;
 if (isIphonex())
   height = 602 - 64;
 
@@ -202,15 +215,22 @@ const fileToInstance = (file, t) => {
         avatarImg = image;
         drawAvatar(finalImageUrl => {
           let avatar = document.getElementById('avatar');
+          let avatar1 = document.getElementById('avatar1');
           avatar.src = finalImageUrl;
+          avatar1.src = finalImageUrl;
         })
       } else {
         runImg = image;
         drawRun(finalImageUrl => {
           let map = document.getElementById('map');
+          let map1 = document.getElementById('map1');
           map.src = finalImageUrl;
+          map1.src = finalImageUrl;
         })
       }
+      let imageDiv = document.getElementById('image-container');
+      imageDiv.innerHTML =
+        `<img src='./images/certificate.png'>`
     }
   }
 }
@@ -253,78 +273,89 @@ const circleImg = (ctx, img, x, y, r) => {
 
 var createHoster = document.getElementById('createHoster');
 createHoster.onclick = () => {
-  if (avatarImg != undefined)
-    avatarWidth = avatarHeight / avatarImg.height * avatarImg.width;
-  if (runImg != undefined)
-    runWidth = runHeight / runImg.height * runImg.width;
+  // if (avatarImg != undefined)
+  //   avatarWidth = avatarHeight / avatarImg.height * avatarImg.width;
+  // if (runImg != undefined)
+  //   runWidth = runHeight / runImg.height * runImg.width;
 
-  // 绘制网络图片
-  var myImage = new Image();
-  myImage.crossOrigin = 'Anonymous';
-  // myImage.src = 'https://upload-images.jianshu.io/upload_images/6359034-33eb49815f4e1cf3.png?imageMogr2/auto-orient/strip|imageView2/2/w/472/format/webp'; //你自己本地的图片或者在线图片
-  myImage.src = '../images/certificate.png'; //你自己本地的图片或者在线图片
+  // // 绘制网络图片
+  // var myImage = new Image();
+  // myImage.crossOrigin = 'Anonymous';
+  // // myImage.src = 'https://upload-images.jianshu.io/upload_images/6359034-33eb49815f4e1cf3.png?imageMogr2/auto-orient/strip|imageView2/2/w/472/format/webp'; //你自己本地的图片或者在线图片
+  // myImage.src = '../images/certificate.png'; //你自己本地的图片或者在线图片
 
-  myImage.onload = () => {
-    // 建立canvas
-    var canvas = document.createElement('canvas');
-    canvas.width = width * scaleW;
-    canvas.height = height * scaleH;
-    const context = canvas.getContext('2d');
+  // myImage.onload = () => {
+  //   // 建立canvas
+  //   var canvas = document.createElement('canvas');
+  //   canvas.width = width * scaleW;
+  //   canvas.height = height * scaleH;
+  //   const context = canvas.getContext('2d');
 
-    // 绘制证书背景
-    context.drawImage(myImage, 0, 0, width * scaleW, height * scaleH);
-    // 绘制头像
-    if (avatarImg != undefined) { // 或圆形头像，xy对应圆心坐标
-      if (isIphonex())
-        circleImg(context, avatarImg, 130 * scaleW, 39 * scaleH, avatarWidth * scaleW - 2, avatarHeight * scaleH - 2);
-      else
-        circleImg(context, avatarImg, 127 * scaleW, 40 * scaleH, avatarWidth * scaleW, avatarHeight * scaleH);
-    }
-    // 绘制运动轨迹
-    context.restore();
-    if (runImg != undefined) {
-      context.save();
-      if (isIphonex())
-        context.drawImage(runImg, 80 * scaleW, 350 * scaleH, runWidth * scaleW, runHeight * scaleH);
-      else
-        context.drawImage(runImg, 80 * scaleW, 397 * scaleH, runWidth * scaleW, runHeight * scaleH);
-    }
+  //   // 绘制证书背景
+  //   context.drawImage(myImage, 0, 0, width * scaleW, height * scaleH);
+  //   // 绘制头像
+  //   if (avatarImg != undefined) { // 或圆形头像，xy对应圆心坐标
+  //     if (isIphonex() || bili == 1.06) {
+  //       circleImg(context, avatarImg, 130 * scaleW, 39 * scaleH, avatarWidth * scaleW - 2, avatarHeight * scaleH - 2);
+  //     }
+  //     else
+  //       circleImg(context, avatarImg, 127 * scaleW, 40 * scaleH, avatarWidth * scaleW, avatarHeight * scaleH);
+  //   }
+  //   // 绘制运动轨迹
+  //   context.restore();
+  //   if (runImg != undefined) {
+  //     context.save();
+  //     if (isIphonex() || bili == 1.06)
+  //       context.drawImage(runImg, 80 * scaleW, 350 * scaleH, runWidth * scaleW, runHeight * scaleH);
+  //     else
+  //       context.drawImage(runImg, 80 * scaleW, 397 * scaleH, runWidth * scaleW, runHeight * scaleH);
+  //   }
 
-    // 63接近边界
-    context.restore();
-    context.font = 'italic 16px bold';
-    // 写姓名
-    if (isIphonex()) {
-      context.fillText(username.value.trim(), 55 * scaleW, 190 * scaleH);
-      context.fillText(newNum, 62 * scaleW, 218 * scaleH);
-    } else {
-      context.fillText(username.value.trim(), 62 * scaleW, 214 * scaleH);
-      context.fillText(newNum, 62 * scaleW, 245 * scaleH);
-    }
+  //   // 63接近边界
+  //   context.restore();
+  //   context.font = 'italic 16px bold';
+  //   // 写姓名
+  //   if (isIphonex()) {
+  //     context.fillText(username.value.trim(), 55 * scaleW, 190 * scaleH);
+  //     context.fillText(newNum, 62 * scaleW, 218 * scaleH);
+  //   } else {
+  //     context.fillText(username.value.trim(), 62 * scaleW, 214 * scaleH);
+  //     context.fillText(newNum, 62 * scaleW, 245 * scaleH);
+  //   }
 
-    // 第一行底部 148
-    // 第四列开始 82
-    // 写文字
-    let comment = document.getElementById('comment').value.trim();
-    context.font = 'italic 18px';
+  //   // 第一行底部 148
+  //   // 第四列开始 82
+  //   // 写文字
+  //   let comment = document.getElementById('comment').value.trim();
+  //   context.font = 'italic 18px';
 
-    const lineH = 19;
-    const lineNum = 120 * scaleW / 18;
-    const lines = comment.length / lineNum;
-    for (let i = 0; i < lines; ++i) {
-      let str = comment.substr(i * lineNum, lineNum);
-      if (isIphonex())
-        context.fillText(str, 199 * scaleW, (370 + i * lineH) * scaleH);
-      else
-        context.fillText(str, 199 * scaleW, (405 + i * lineH) * scaleH);
-    }
+  //   const lineH = 19;
+  //   const lineNum = 120 * scaleW / 18;
+  //   const lines = comment.length / lineNum;
+  //   for (let i = 0; i < lines; ++i) {
+  //     let str = comment.substr(i * lineNum, lineNum);
+  //     if (isIphonex() || bili == 1.06)
+  //       context.fillText(str, 199 * scaleW, (370 + i * lineH) * scaleH);
+  //     else
+  //       context.fillText(str, 199 * scaleW, (405 + i * lineH) * scaleH);
+  //   }
 
-    var base64 = canvas.toDataURL("image/png", encoderOptions); //"image/png" 这里注意一下
-    const imageDiv = document.getElementById('image-container');
-    var posX = 100 * scaleW;
-    var posY = 580 * scaleH;
-    imageDiv.innerHTML =
-      `<div id="bg"><br><img src=${base64}><a class="ani submitBtn" download href=${base64} style="left: ${posX}px; top: ${posY}px; list-style: none;text-decoration: none;color:#000">点击下载证书</a></div>`
+  //   var base64 = canvas.toDataURL("image/png", encoderOptions); //"image/png" 这里注意一下
+  //   const imageDiv = document.getElementById('image-container');
+  //   var posX = 100 * scaleW;
+  //   var posY = 580 * scaleH;
+  //   imageDiv.innerHTML =
+  //     `<div id="bg"><br><img src=${base64}><a class="ani submitBtn" download href=${base64} style="left: ${posX}px; top: ${posY}px; list-style: none;text-decoration: none;color:#000">点击下载证书</a></div>`
+  // }
+  if (avatarImg == undefined || runImg == undefined) {
+
   }
   mySwiper.slideNext();
+}
+
+function showToast () {
+  isShow = true;
+  setTimeout(() => {
+    isShow = false;
+  }, 2000);
 }

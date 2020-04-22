@@ -52,7 +52,7 @@
         <div class="ani resize" style="z-index: 99;width: 366px;top: 148px;left: 40px;" swiper-animate-effect="zoomInUp"
           swiper-animate-duration="1.0s" swiper-animate-delay="0.8s">
           <form id="form" class="form">
-            <div class="form-control resize">
+            <div class="form-control">
               <label>我的身份</label>
               <select class="resize" style="width: 300px;">
                 <option value="volvo">本科生</option>
@@ -122,7 +122,7 @@
             swiper-animate-delay="3.4s"> 选择你的角色 </p>
         </div>
         <!-- 跑道图片 -->
-        <img src="images/paodao.png" class="ani resize paodao" swiper-animate-effect="bounceInLeft"
+        <img src="images/paodao.png" class="ani paodao" swiper-animate-effect="bounceInLeft"
           swiper-animate-duration="1.0s" swiper-animate-delay="0.5s">
       </section>
 
@@ -136,7 +136,7 @@
         <img src="images/cloud.png" class="ani resize" style="left: 29px;top: -30px;z-index: 1;">
         <!-- 跑步动画 -->
         <!-- 需要额外用一张跑道图片，避免画面完全移出 -->
-        <img src="images/path.png" class="ani resize path" style="height: 118px;">
+        <img src="images/path.png" class="ani path" style="height: 118px;">
         <!-- 城市动图 -->
         <img src="images/city.png" class="ani resize"
           style="left: 0;top: 307px;height: 242px;animation-timing-function: linear;"
@@ -145,12 +145,12 @@
           style="left: 33px;top: 341px;height: 225px;animation-timing-function: linear;visibility: hidden;"
           swiper-animate-effect="fadeInRight" swiper-animate-duration="1.4s" swiper-animate-delay="15.6s">
         <!-- 跑道动图 -->
-        <img src="images/many.png" style="height: 120px;z-index: 3;" class="ani resize many"
+        <img src="images/many.png" style="height: 120px;z-index: 3;" class="ani many"
           swiper-animate-effect="slideOutLeft" swiper-animate-duration="17.0s" swiper-animate-delay="0.8s">
         <!-- 小人 -->
-        <div class="ani resize people" swiper-animate-effect="slideOutRight" swiper-animate-duration="3.6s"
+        <div class="ani people" swiper-animate-effect="slideOutRight" swiper-animate-duration="3.6s"
           swiper-animate-delay="16.5s">
-          <img id="winner" src="images/man.gif" class="ani resize mangif" swiper-animate-effect="slideInLeft"
+          <img id="winner" src="images/man.gif" class="ani mangif" swiper-animate-effect="slideInLeft"
             swiper-animate-duration=".6s">
         </div>
         <!-- 提示按钮 -->
@@ -197,6 +197,15 @@
       </section>
 
       <section class="swiper-slide swiper-slide6">
+        <!-- 运动轨迹 -->
+        <img id="map1" src="./images/map.png" class="ani resize"
+          style="left: 73px; top: 427px; margin: auto;height: 127px;">
+        <!--  自拍 -->
+        <img id="avatar1" src="./images/photo.png" class="ani resize"
+          style="left: 118px; top: 37px;margin: auto;height: 105px;">
+        <!-- 证书 -->
+        <!-- <img id="avatar" src="./images/certificate.png" class="resize"
+          style="z-index: 999;left: 8px;top: 4px;height: 622px;"> -->
         <div class="ani resize" id="image-container" style="z-index: 999;left: 8px;top: 4px;"></div>
       </section>
     </div>
