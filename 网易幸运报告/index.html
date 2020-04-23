@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=750 user-scalable=no" />
+    <meta name="format-detection" content="telephone=no,email=no">
+    <link rel="dns-prefetch" href="//static.ws.126.net">
+    <title>你的2020好运指南</title>
+    <link href="https://static.ws.126.net/163/f2e/news/2020_newyear/static/css/main.3c4acd9c.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="common-container">
+        <div id="content">
+            <div class="save_canvas"></div>
+            <div id="main">
+                <div class="canvas"></div>
+                <div class="first">
+                    <div class="first_logo"></div>
+                    <div class="first_confirm">
+                        <div class="confirm_text confirm_ani"></div>
+                        <div class="confirm_text_2"></div>
+                        <div class="confirm_btn">
+                            <div class="confirm_back"></div>
+                            <div class="confirm_front"></div>
+                        </div>
+                    </div>
+                    <div class="music"></div>
+                    <ul class="slide_box">
+                        <li>
+                            <div class="slide_img">
+                                <p class="icon"></p>
+                                <p class="icon"></p>
+                                <p class="icon"></p>
+                                <p class="icon"></p>
+                                <p class="icon"></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="slide_img"></div>
+                        </li>
+                        <li>
+                            <div class="slide_img"></div>
+                        </li>
+                        <li>
+                            <div class="slide_img"></div>
+                        </li>
+                        <li>
+                            <div class="slide_img"></div>
+                        </li>
+                        <li>
+                            <div class="slide_img"></div>
+                        </li>
+                        <li>
+                            <div class="slide_img"></div>
+                        </li>
+                        <li>
+                            <div class="slide_img"></div>
+                        </li>
+                    </ul>
+                    <div class="loading">
+                        <div class="loading_bar">
+                            <div class="loading_bar_inner"></div>
+                        </div>
+                        <div class="loading_text">00%</div>
+                    </div>
+                </div>
+                <div class="select">
+                    <div class="select_main">
+                        <div class="themes">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="wallpaper">
+                            <ul>
+                            </ul>
+                        </div>
+                        <div class="colors">
+                            <div class="color_main">
+
+                            </div>
+                            <ul class="select_color">
+                                <li class="active">
+                                    <div class="color_circle"></div>
+                                </li>
+                                <li>
+                                    <div class="color_circle"></div>
+                                </li>
+                                <li>
+                                    <div class="color_circle"></div>
+                                </li>
+                                <li>
+                                    <div class="color_circle"></div>
+                                </li>
+                                <li>
+                                    <div class="color_circle"></div>
+                                </li>
+                                <li>
+                                    <div class="color_circle"></div>
+                                </li>
+                                <li>
+                                    <div class="color_circle"></div>
+                                </li>
+                                <li>
+                                    <div class="color_circle"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="decorate">
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="select_list">
+                        <li class="list_item active active_reverse">
+                            <div class="hump"></div>
+                            <div class="list_icon"></div>
+                            <div class="list_text">主题</div>
+                        </li>
+                        <li class="list_item">
+                            <div class="hump"></div>
+                            <div class="list_icon"></div>
+                            <div class="list_text">装饰</div>
+                        </li>
+                        <li class="list_item">
+                            <div class="hump"></div>
+                            <div class="list_icon"></div>
+                            <div class="list_text">背景色</div>
+                        </li>
+                        <li class="list_item">
+                            <div class="hump"></div>
+                            <div class="list_icon"></div>
+                            <div class="list_text">贴纸</div>
+                        </li>
+                    </ul>
+                    <div class="close_select">
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="finish">
+                        <p>完成</p>
+                    </div>
+                </div>
+                <div class="add_qrcode_box">
+                    <div class="add_qrcode">
+                        <div class="qrcode_box">
+                            <div class="qr_code"></div>
+                            <div class="scan_qrcode  notice_text"></div>
+                            <div class="long_tap_save  notice_text"></div>
+                        </div>
+                    </div>
+                    <div class="final_white"></div>
+                </div>
+                <div class="touch_save_guide guide">长按保存你的2020好运指南</div>
+                <div class="screen_save_guide guide">截图保存你的2020好运指南</div>
+            </div>
+            <div class="tap_save"></div>
+            <audio id="confirm" src="./static/confirm_1.mp3"></audio>
+            <audio id="flower" src="./static/flower_1.mp3"></audio>
+            <audio id="finish" src="./static/finish_3.mp3"></audio>
+            <audio id="bgm" src="./static/bgm_1.mp3" loop></audio>
+        </div>
+    </div>
+    <!-- zepto -->
+    <script src="./js/pixi.js"></script>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/qrcode.js"></script>
+    <!-- <script src="https://analytics.163.com/ntes.js"></script>
+    <script>_ntes_nacc = "news";neteaseTracker();</script>
+    <script src="https://static.ws.126.net/utf8/3g/util/analysis.min.js"></script>
+    <script>
+        _ntes_sps_modelid="fdh5_2020_newyear";
+        neteaseAnalysis({type:"special",spst:5,modelid:_ntes_sps_modelid});
+    </script> -->
+    <script>!function (e) { function t(t) { for (var n, l, a = t[0], f = t[1], i = t[2], c = 0, s = []; c < a.length; c++)l = a[c], Object.prototype.hasOwnProperty.call(o, l) && o[l] && s.push(o[l][0]), o[l] = 0; for (n in f) Object.prototype.hasOwnProperty.call(f, n) && (e[n] = f[n]); for (p && p(t); s.length;)s.shift()(); return u.push.apply(u, i || []), r() } function r() { for (var e, t = 0; t < u.length; t++) { for (var r = u[t], n = !0, a = 1; a < r.length; a++) { var f = r[a]; 0 !== o[f] && (n = !1) } n && (u.splice(t--, 1), e = l(l.s = r[0])) } return e } var n = {}, o = { 1: 0 }, u = []; function l(t) { if (n[t]) return n[t].exports; var r = n[t] = { i: t, l: !1, exports: {} }; return e[t].call(r.exports, r, r.exports, l), r.l = !0, r.exports } l.m = e, l.c = n, l.d = function (e, t, r) { l.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r }) }, l.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, l.t = function (e, t) { if (1 & t && (e = l(e)), 8 & t) return e; if (4 & t && "object" == typeof e && e && e.__esModule) return e; var r = Object.create(null); if (l.r(r), Object.defineProperty(r, "default", { enumerable: !0, value: e }), 2 & t && "string" != typeof e) for (var n in e) l.d(r, n, function (t) { return e[t] }.bind(null, n)); return r }, l.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return l.d(t, "a", t), t }, l.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, l.p = "https://static.ws.126.net/163/f2e/news/2020_newyear/"; var a = window.webpackJsonp = window.webpackJsonp || [], f = a.push.bind(a); a.push = t, a = a.slice(); for (var i = 0; i < a.length; i++)t(a[i]); var p = f; r() }([]);</script>
+    <script type="text/javascript" src="./js/vendors.65646b96.js"></script>
+    <script type="text/javascript" src="./js/main.52d56546.js" async></script>
+</body>
+</body>
+
+</html>
